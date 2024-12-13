@@ -1,0 +1,42 @@
+plugins {
+    id 'org.springframework.boot' version '3.4.0'
+    id 'java'
+}
+
+group = 'Work'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '23'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    implementation 'org.springframework.boot:spring-boot-starter'
+
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+    compileOnly 'org.projectlombok:lombok'
+
+    annotationProcessor 'org.projectlombok:lombok'
+
+    runtimeOnly 'com.h2database:h2'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    implementation 'org.flywaydb:flyway-core:9.6.0'
+
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+}
+
+test {
+    useJUnitPlatform()
+}
+
