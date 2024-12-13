@@ -17,7 +17,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 
 @Component
-@WebFilter(urlPatterns = "/entity/*")
+@WebFilter(urlPatterns = "/photosessions/*")
 public class TokenValidationFilter implements Filter {
 
     @Value("${admin.username}")
@@ -36,7 +36,7 @@ public class TokenValidationFilter implements Filter {
 
         String path = httpRequest.getRequestURI();
 
-        if (path.startsWith("/entity")) {
+        if (path.startsWith("/photosessions")) {
             String authHeader = httpRequest.getHeader("Authorization");
 
             if (authHeader == null || authHeader.isBlank()) {
@@ -85,5 +85,6 @@ public class TokenValidationFilter implements Filter {
         response.getWriter().write(message);
     }
 }
+
 
 
